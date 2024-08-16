@@ -1,6 +1,5 @@
 import React from "react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
-
 import Image from "next/image";
 
 export function BentoGridTwoRow() {
@@ -36,9 +35,9 @@ const items = [
     header: (
       <Image
         src="/create-charts.png"
-        alt="Demo picture"
-        width={100} // Use a suitable width
-        height={100} // Use a suitable height
+        alt="Create Charts"
+        width={100}
+        height={100}
         layout="responsive"
         sizes="80vw"
       />
@@ -48,20 +47,47 @@ const items = [
   {
     title: "OpenBB Copilot",
     description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
+    header: (
+      <Image
+        src="/copilot.png"
+        alt="OpenBB Copilot"
+        width={100}
+        height={100}
+        layout="responsive"
+        sizes="80vw"
+      />
+    ),
     className: "md:col-span-2 md:row-span-2",
   },
   {
     title: "Custom Dashboard",
     description: "Discover the beauty of thoughtful and functional design.",
-    header: <Skeleton />,
+    header: (
+      <Image
+        src="/dashboard.png"
+        alt="Custom Dashboard"
+        width={100}
+        height={100}
+        layout="responsive"
+        sizes="80vw"
+      />
+    ),
     className: "md:col-span-1",
   },
   {
     title: "Download Reports",
     description:
       "Understand the impact of effective communication in our lives.",
-    header: <Skeleton />,
+    header: (
+      <Image
+        src="/reports.png"
+        alt="Download Reports"
+        width={100}
+        height={100}
+        layout="responsive"
+        sizes="80vw"
+      />
+    ),
     className: "md:col-span-1",
   },
 ];

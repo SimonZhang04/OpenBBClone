@@ -77,7 +77,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className="max-w-sm p-6 rounded-xl shadow-lg bg-[#151518]"
+      className="p-6 rounded-xl shadow-lg bg-[#151518]"
       style={{
         background: `radial-gradient(${getGradientPosition()}, ${getGradientStops()})`,
       }}

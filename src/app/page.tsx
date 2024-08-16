@@ -25,7 +25,7 @@ export default function Home() {
         <Button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
           Start free trial
         </Button>
-        <ul className="flex space-x-4 text-gray-700">
+        <ul className="md:flex space-x-4 text-gray-700">
           <li className="flex">
             <GreyCheck /> No credit card required
           </li>
@@ -41,8 +41,8 @@ export default function Home() {
         <Image
           src="/openbb1.png"
           alt="Demo picture"
-          width={700} // Use a suitable width
-          height={525} // Use a suitable height
+          width={700}
+          height={525}
           layout="responsive"
           sizes="80vw"
         />
@@ -52,22 +52,35 @@ export default function Home() {
         <p>Boost your analysis with Al and streamlined workflows.</p>
         <BentoGridTwoRow />
       </section>
-      <div className="flex">
+      <section className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 md:space-y-10 lg:mt-20">
+        <h1>The Ultimate Analysis Suite</h1>
+        <p>
+          Unmatched precision, efficiency, and flexibility with Terminal Pro.
+        </p>
         <Card
-          color="#204C2F"
-          title="Automate your workflows"
+          color="#0088CC"
+          title="The first AI-powered financial terminal"
           description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
-          buttonText="Find out more"
+          buttonText="Start free trial"
           direction="top right"
         />
-        <Card
-          color="#5B3C25"
-          title="Build your edge"
-          description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
-          buttonText="Find out more"
-          direction="top right"
-        />
-      </div>
+        <div className="md:flex">
+          <Card
+            color="#204C2F"
+            title="Automate your workflows"
+            description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
+            buttonText="Find out more"
+            direction="top right"
+          />
+          <Card
+            color="#5B3C25"
+            title="Build your edge"
+            description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
+            buttonText="Find out more"
+            direction="top right"
+          />
+        </div>
+      </section>
     </main>
   );
 }
