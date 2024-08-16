@@ -60,16 +60,16 @@ const Card: React.FC<CardProps> = ({
 
     switch (gradientSize) {
       case "small":
-        return `rgba(${hexToRgb(color)}, 0.2) 5%, rgba(${hexToRgb(
+        return `rgba(${hexToRgb(color)}, 0.5) 5%, rgba(${hexToRgb(
           color
         )}, 0.2) 20%, ${transparentColor} 40%`;
       case "large":
-        return `rgba(${hexToRgb(color)}, 0.2) 15%, rgba(${hexToRgb(
+        return `rgba(${hexToRgb(color)}, 0.5) 15%, rgba(${hexToRgb(
           color
         )}, 0.2) 50%, ${transparentColor} 80%`;
       case "medium":
       default:
-        return `rgba(${hexToRgb(color)}, 0.2) 10%, rgba(${hexToRgb(
+        return `rgba(${hexToRgb(color)}, 0.5) 10%, rgba(${hexToRgb(
           color
         )}, 0.2) 40%, ${transparentColor} 70%`;
     }
@@ -77,7 +77,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className="max-w-sm p-6 rounded-lg shadow-lg bg-[#151518]"
+      className="max-w-sm p-6 rounded-xl shadow-lg bg-[#151518]"
       style={{
         background: `radial-gradient(${getGradientPosition()}, ${getGradientStops()})`,
       }}
@@ -92,7 +92,7 @@ const Card: React.FC<CardProps> = ({
       </div>
       <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
       <p className="mb-6">{description}</p>
-      <button className="px-4 py-2 text-sm font-medium text-white bg-background rounded border-2 border-grey hover:border-white">
+      <button className="px-4 py-2 text-sm font-medium text-white bg-background rounded border-[0.5px] border-grey hover:border-white">
         {buttonText}
       </button>
     </div>

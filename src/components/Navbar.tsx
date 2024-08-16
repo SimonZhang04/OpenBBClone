@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Logo from "./ui/Logo";
+import { Logo } from "./ui/Logo";
 
 const components: { title: string; href: string; description: string }[] = [
   {
