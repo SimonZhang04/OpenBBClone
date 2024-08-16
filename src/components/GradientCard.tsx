@@ -5,7 +5,15 @@ interface CardProps {
   title: string;
   description: string;
   buttonText: string;
-  direction?: "left" | "middle" | "top left";
+  direction?:
+    | "left"
+    | "middle"
+    | "top left"
+    | "top right"
+    | "bottom left"
+    | "bottom right"
+    | "top"
+    | "bottom";
   gradientSize?: "small" | "medium" | "large";
 }
 
@@ -23,6 +31,16 @@ const Card: React.FC<CardProps> = ({
         return "circle at 10% 50%";
       case "top left":
         return "circle at 25% 20%";
+      case "top right":
+        return "circle at 75% 20%";
+      case "bottom left":
+        return "circle at 25% 80%";
+      case "bottom right":
+        return "circle at 75% 80%";
+      case "top":
+        return "circle at 50% 20%";
+      case "bottom":
+        return "circle at 50% 80%";
       case "middle":
       default:
         return "circle at 50% 50%";
@@ -59,23 +77,22 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div
-      className="max-w-sm p-6 rounded-lg shadow-lg"
+      className="max-w-sm p-6 rounded-lg shadow-lg bg-[#151518]"
       style={{
         background: `radial-gradient(${getGradientPosition()}, ${getGradientStops()})`,
       }}
     >
       <div className="flex items-center mb-4">
         <span
-          className="inline-block w-4 h-4 mr-2 rounded-full"
-          style={{ backgroundColor: color }}
-        />
-        <span className="px-2 py-1 text-sm font-semibold text-white bg-green-700 rounded-full">
+          className={`px-2 py-1 text-sm text-white rounded-full`}
+          style={{ backgroundColor: `${color}` }}
+        >
           Add-in for Excel
         </span>
       </div>
       <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
-      <p className="text-gray-400 mb-6">{description}</p>
-      <button className="px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded hover:bg-gray-600">
+      <p className="mb-6">{description}</p>
+      <button className="px-4 py-2 text-sm font-medium text-white bg-background rounded border-2 border-grey hover:border-white">
         {buttonText}
       </button>
     </div>
