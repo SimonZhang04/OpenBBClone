@@ -6,7 +6,7 @@ import { GreyCheck } from "@/components/ui/Icons";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen">
+    <main className="flex flex-col items-center justify-center min-h-screen pt-10">
       <section className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 md:space-y-10 lg:mt-20">
         <Button className="bg-transparent border-[0.5px] rounded-lg border-white text-white px-2 py-1">
           <p className="text-sm"> New Case Studies. Check it out!</p>
@@ -46,6 +46,10 @@ export default function Home() {
           sizes="80vw"
         />
       </GlowBorder>
+      <section className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 md:space-y-10 lg:mt-20">
+        <h1>Next-Level Features</h1>
+        <p>Boost your analysis with Al and streamlined workflows.</p>
+      </section>
       <div className="flex">
         <Card
           color="#204C2F"
