@@ -40,7 +40,7 @@ const components: { title: string; href: string; description: string }[] = [
 
 export default function Navbar() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="fixed w-screen bg-background">
       <Logo />
       <NavigationMenuList>
         <NavigationMenuItem>

@@ -7,8 +7,8 @@ interface GlowBorderProps {
 const GlowBorder: React.FC<GlowBorderProps> = ({ children }) => {
   return (
     <div
-      className={`relative rounded-lg`}
-      style={{ boxShadow: `0 0 90px 13px rgba(0,0,0,0.1)` }}
+      className="relative rounded-lg m-24"
+      style={{ boxShadow: `0 0 40px 20px rgba(72, 61, 139, 0.6)` }}
     >
       {children}
     </div>
