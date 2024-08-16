@@ -1,21 +1,40 @@
 import Card from "@/components/GradientCard";
 import GlowBorder from "@/components/BorderGradientCard";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { GreyCheck } from "@/components/ui/Icons";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen">
       <section className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 md:space-y-10 lg:mt-20">
+        <Button className="bg-transparent border-[0.5px] rounded-lg border-white text-white px-2 py-1">
+          <p className="text-sm"> New Case Studies. Check it out!</p>
+        </Button>
         <h1 className="text-center text-[1.75rem]/[1.2em] font-bold text-white md:title-lg-bold lg:text-[3.5rem]/[1.2em]">
           Investment research
         </h1>
         <h1 className="bg-gradient-to-r text-[1.75rem]/[1.2em] font-bold md:title-lg-bold lg:text-[3.5rem]/[1.2em] from-[#0465B1] to-[#0088CC] inline-block text-transparent bg-clip-text">
           made easy with AI.
         </h1>
-        <p>
+        <p className="text-center">
           Customize and speed up your analysis, bring your own data, and create
           instant reports to gain a competitive edge.
         </p>
+        <Button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+          Start free trial
+        </Button>
+        <ul className="flex space-x-4 text-gray-700">
+          <li className="flex">
+            <GreyCheck /> No credit card required
+          </li>
+          <li className="flex">
+            <GreyCheck /> 3-week free trial
+          </li>
+          <li className="flex">
+            <GreyCheck /> Instant access
+          </li>
+        </ul>
       </section>
       <GlowBorder>
         <Image
