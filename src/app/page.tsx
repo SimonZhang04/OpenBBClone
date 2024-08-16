@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { GreyCheck } from "@/components/ui/Icons";
 import { BentoGridTwoRow } from "@/components/BentoGrid";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
+import { Input } from "@/components/ui/input";
 
 export default function Home() {
   return (
@@ -80,6 +82,19 @@ export default function Home() {
             direction="top right"
           />
         </div>
+      </section>
+      <section className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 md:space-y-10 lg:mt-20">
+        <h1>Trusted By Professionals</h1>
+        <p>See what professional are saying about us</p>
+        <ReviewsCarousel />
+      </section>
+      <section className="container mx-auto mt-8 flex flex-col items-center justify-center space-y-6 md:space-y-10 lg:mt-20">
+        <h1>Ready to build your dream dashboard? </h1>
+        <p>
+          Sign up to Terminal Pro today and become efficient with AI-driven
+          analysis.
+        </p>
+        <Input />
       </section>
     </main>
   );
