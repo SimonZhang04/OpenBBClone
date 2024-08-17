@@ -1,6 +1,6 @@
 "use client";
-
-import * as React from "react";
+// components/Navbar.tsx
+import { useState } from "react";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
@@ -13,7 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Logo } from "./ui/Logo";
+import { FullLogo, Logo } from "./ui/Logo";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -38,99 +38,78 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
-export default function Navbar() {
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
-    <NavigationMenu className="fixed w-full left-0 right-0">
-      <Logo />
-      <NavigationMenuList className="flex justify-center">
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Products</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Company</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols lg:w-[600px]">
-              {components.map((component) => (
-                <ListItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
-                >
-                  {component.description}
-                </ListItem>
-              ))}
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Blog
-            </NavigationMenuLink>
+    <nav className="text-white shadow-md fixed w-full bg-background">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <FullLogo />
+        <Logo />
+
+        <div className="text-xl font-bold"></div>
+
+        <div className="hidden md:flex space-x-4">
+          <Link href="/">
+            <p className="hover:bg-gray-700 px-3 py-2 rounded">Products</p>
           </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/docs" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Pricing
-            </NavigationMenuLink>
+          <Link href="/">
+            <p className="hover:bg-gray-700 px-3 py-2 rounded">Solutions</p>
           </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
-  );
-}
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
+          <Link href="/">
+            <p className="hover:bg-gray-700 px-3 py-2 rounded">Company</p>
+          </Link>
+          <Link href="/">
+            <p className="hover:bg-gray-700 px-3 py-2 rounded">Blog</p>
+          </Link>
+          <Link href="/">
+            <p className="hover:bg-gray-700 px-3 py-2 rounded">Pricing</p>
+          </Link>
+        </div>
+
+        <button
+          className="md:hidden text-white focus:outline-none"
+          onClick={toggleMenu}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <div className={`md:hidden ${isOpen ? "block" : "hidden"} bg-gray-800`}>
+        <Link href="/">
+          <p className="block px-4 py-2 text-white hover:bg-gray-700">Home</p>
+        </Link>
+        <Link href="/about">
+          <p className="block px-4 py-2 text-white hover:bg-gray-700">About</p>
+        </Link>
+        <Link href="/services">
+          <p className="block px-4 py-2 text-white hover:bg-gray-700">
+            Services
           </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
+        </Link>
+        <Link href="/contact">
+          <p className="block px-4 py-2 text-white hover:bg-gray-700">
+            Contact
+          </p>
+        </Link>
+      </div>
+    </nav>
   );
-});
-ListItem.displayName = "ListItem";
+};
+
+export default Navbar;
