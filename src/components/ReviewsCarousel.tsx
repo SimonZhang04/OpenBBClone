@@ -10,7 +10,7 @@ import TestimonialCard from "./CarouselCard";
 
 export default function ReviewsCarousel() {
   return (
-    <Carousel className="w-full max-w-xl">
+    <Carousel className="w-full max-w-3xl">
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>

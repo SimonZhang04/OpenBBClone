@@ -14,7 +14,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   title,
 }) => {
   return (
-    <div className="bg-[#1E1E1E] text-white rounded-lg p-8 w-full mx-auto">
+    <div className="bg-[#0F141C] text-white rounded-lg p-8 w-full mx-auto">
       <p className="text-center text-lg leading-relaxed">{text}</p>
       <div className="mt-8 flex flex-col items-center">
         <Image
