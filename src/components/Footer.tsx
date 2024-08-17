@@ -1,31 +1,32 @@
 import React from "react";
 import Link from "next/link";
+import { TextLogo } from "./ui/Logo";
+import { Input } from "./ui/input";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#1E1E1E] text-white py-12">
+    <footer className="text-white py-12 border-t-2">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           <div>
-            <h2 className="font-bold">OPENBB</h2>
-            <button className="mt-4 bg-gray-800 text-white py-2 px-4 rounded-lg">
-              <span className="mr-2">⭐</span> Star us 27k
-            </button>
+            <TextLogo />
             <h3 className="mt-8 text-lg font-semibold">STAY UP TO DATE</h3>
-            <input
+            <Input
               type="email"
               placeholder="Email"
-              className="mt-4 w-full p-2 bg-gray-700 rounded-lg text-white"
+              className="bg-[#1E1E1E] border-[0.5px] border-gray-500 text-xs rounded-lg w-30"
             />
-            <p className="mt-2 text-sm">Unsubscribe at any time.</p>
-            <Link href="#" className="text-blue-500 mt-2 block">
+            <p className="mt-2 text-xs text-gray-400">
+              Unsubscribe at any time.
+            </p>
+            <Link href="#" className="text-gray-400 text-xs block mt-6">
               Sign up ➔
             </Link>
           </div>
 
           <div>
             <h3 className="font-bold mb-4">PRODUCTS</h3>
-            <ul>
+            <ul className="text-xs text-gray-400 space-y-3">
               <li className="mb-2">
                 <Link href="#">OpenBB Terminal Pro</Link>
               </li>
@@ -43,7 +44,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h3 className="font-bold mb-4">SOLUTIONS</h3>
-            <ul>
+            <ul className="text-xs text-gray-400 space-y-3">
               <li className="mb-2">
                 <Link href="#">Corporate Investors</Link>
               </li>
@@ -82,7 +83,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h3 className="font-bold mb-4">COMPANY</h3>
-            <ul>
+            <ul className="text-xs text-gray-400 space-y-3">
               <li className="mb-2">
                 <Link href="#">Open Startup</Link>
               </li>
@@ -100,7 +101,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h3 className="font-bold mb-4">OTHER</h3>
-            <ul>
+            <ul className="text-xs text-gray-400 space-y-3">
               <li className="mb-2">
                 <Link href="#">OpenBB Bot</Link>
               </li>
@@ -126,20 +127,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-12 flex flex-col lg:flex-row items-center justify-between border-t border-gray-700 pt-8">
-          <p className="text-sm text-gray-400">
-            © 2024 OpenBB Inc. All rights reserved.
-          </p>
-          <div className="mt-4 lg:mt-0 flex space-x-4">
-            <Link href="#" className="text-gray-400">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-gray-400">
-              Terms
-            </Link>
-            <Link href="#" className="text-gray-400">
-              OSS Friends
-            </Link>
-          </div>
           <div className="mt-4 lg:mt-0 flex space-x-4">
             <Link href="#" className="text-gray-400">
               <i className="fab fa-linkedin"></i>

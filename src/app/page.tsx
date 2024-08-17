@@ -92,15 +92,19 @@ export default function Home() {
         </p>
         <ReviewsCarousel />
       </section>
-      <section className="container mt-8 flex flex-col items-center justify-center space-y-4">
-        <h1 className="text-2xl font-bold">
+      <section className="container flex flex-col items-center justify-center space-y-4 mt-20">
+        <h1 className="text-lg font-bold uppercase">
           Ready to build your dream dashboard?
         </h1>
         <p className="text-sm text-gray">
           Sign up to Terminal Pro today and become efficient with AI-driven
           analysis.
         </p>
-        <Input />
+        <Input
+          type="email"
+          placeholder="BobbyAxelrod@gmail.com"
+          className="bg-[#1E1E1E] border-[0.5px] text-xs border-gray-500 rounded-lg"
+        />
       </section>
     </main>
   );
