@@ -3,6 +3,7 @@ import React from "react";
 interface CardProps {
   color: string;
   title: string;
+  text: string;
   description: string;
   buttonText: string;
   direction?:
@@ -20,6 +21,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({
   color,
   title,
+  text,
   description,
   buttonText,
   direction = "middle",
@@ -84,15 +86,15 @@ const Card: React.FC<CardProps> = ({
     >
       <div className="flex items-center mb-4">
         <span
-          className={`px-2 py-1 text-sm text-white rounded-full`}
+          className={`px-2 py-1 text-xs text-white rounded-full`}
           style={{ backgroundColor: `${color}` }}
         >
-          Add-in for Excel
+          {text}
         </span>
       </div>
-      <h3 className="text-2xl font-bold text-white mb-4">{title}</h3>
+      <h3 className="text-md font-bold text-white mb-4">{title}</h3>
       <p className="mb-6">{description}</p>
-      <button className="px-4 py-2 text-sm font-medium text-white bg-background rounded border-[0.5px] border-grey hover:border-white">
+      <button className="px-4 py-2 text-sm w-full sm:w-auto font-medium text-white bg-background rounded border-[0.5px] border-grey hover:border-white">
         {buttonText}
       </button>
     </div>

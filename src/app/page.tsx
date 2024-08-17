@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen pt-10 pb-20">
       <section className="container mx-auto mt-8 flex flex-col items-center justify-center">
-        <Button className="bg-transparent border-[0.5px] border-white text-white hover:bg-transparent">
+        <Button className="bg-transparent border-[0.5px] border-gray-400 text-gray-400 hover:bg-transparent">
           <p className="text-xs"> New Case Studies. Check it out!</p>
         </Button>
         <h1 className="text-center text-[1.75rem]/[1.2em] mt-8 font-bold text-gray md:title-lg-bold lg:text-[3.5rem]/[1.2em]">
@@ -63,6 +63,7 @@ export default function Home() {
         </p>
         <Card
           color="#0088CC"
+          text="Terminal Pro"
           title="The first AI-powered financial terminal"
           description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
           buttonText="Start free trial"
@@ -72,6 +73,7 @@ export default function Home() {
           <Card
             color="#204C2F"
             title="Automate your workflows"
+            text="Add-in for Excel"
             description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
             buttonText="Find out more"
             direction="top right"
@@ -79,6 +81,7 @@ export default function Home() {
           <Card
             color="#5B3C25"
             title="Build your edge"
+            text="Terminal Pro"
             description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
             buttonText="Find out more"
             direction="top right"
