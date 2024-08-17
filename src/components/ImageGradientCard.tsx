@@ -103,7 +103,7 @@ const ImageGradientCard: React.FC<CardProps> = ({
           </button>
         </div>
 
-        <Image src={image} alt={"image"} width={400} height={800} />
+        <Image src={image} alt={"image"} width={600} height={800} />
       </div>
     </div>
   );
