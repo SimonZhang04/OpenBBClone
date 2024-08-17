@@ -6,6 +6,7 @@ import { GreyCheck } from "@/components/ui/Icons";
 import { BentoGridTwoRow } from "@/components/BentoGrid";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { Input } from "@/components/ui/input";
+import ImageGradientCard from "@/components/ImageGradientCard";
 
 export default function Home() {
   return (
@@ -61,9 +62,10 @@ export default function Home() {
         <p className="text-sm text-gray">
           Unmatched precision, efficiency, and flexibility with Terminal Pro.
         </p>
-        <Card
+        <ImageGradientCard
           color="#0088CC"
           text="Terminal Pro"
+          image="/terminal.png"
           title="The first AI-powered financial terminal"
           description="Simplify your workflow with tailor-made templates. Our Add-in for Excel fetches financial data so you can focus on making investment decisions."
           buttonText="Start free trial"
